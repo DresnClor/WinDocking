@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("VWinDocks")]
+[assembly: AssemblyTitle("WinDocking")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("VWinDocks")]
+[assembly: AssemblyProduct("WinDocking")]
 [assembly: AssemblyCopyright("© 2021-2022 DresnClor. WeifenLuo.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

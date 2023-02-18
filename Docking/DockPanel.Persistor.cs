@@ -12,13 +12,22 @@ namespace WinDocking.Docking
     {
         private static class Persistor
         {
+            /// <summary>
+            /// 配置文件版本
+            /// </summary>
             private const string ConfigFileVersion = "1.0";
+            /// <summary>
+            /// 兼容配置文件版本
+            /// </summary>
             private static string[] CompatibleConfigFileVersions = { };
 
             private class DummyContent : DockContent
             {
             }
 
+            /// <summary>
+            /// 停靠面板结构
+            /// </summary>
             private struct DockPanelStruct
             {
                 private double m_dockLeftPortion;
@@ -64,6 +73,9 @@ namespace WinDocking.Docking
                 }
             }
 
+            /// <summary>
+            /// 内容结构
+            /// </summary>
             private struct ContentStruct
             {
                 private string m_persistString;
@@ -95,6 +107,9 @@ namespace WinDocking.Docking
                 }
             }
 
+            /// <summary>
+            /// 窗格
+            /// </summary>
             private struct PaneStruct
             {
                 private DockState m_dockState;
@@ -126,6 +141,9 @@ namespace WinDocking.Docking
                 }
             }
 
+            /// <summary>
+            /// 嵌套窗格
+            /// </summary>
             private struct NestedPane
             {
                 private int m_indexPane;
@@ -157,6 +175,7 @@ namespace WinDocking.Docking
                 }
             }
 
+            //停靠窗体
             private struct DockWindowStruct
             {
                 private DockState m_dockState;
@@ -181,6 +200,9 @@ namespace WinDocking.Docking
                 }
             }
 
+            /// <summary>
+            /// 浮动窗体
+            /// </summary>
             private struct FloatWindowStruct
             {
                 private Rectangle m_bounds;
@@ -230,6 +252,13 @@ namespace WinDocking.Docking
                 SaveAsXml(dockPanel, stream, encoding, false);
             }
 
+            /// <summary>
+            /// 保存为xml文件
+            /// </summary>
+            /// <param name="dockPanel"></param>
+            /// <param name="stream"></param>
+            /// <param name="encoding"></param>
+            /// <param name="upstream"></param>
             public static void SaveAsXml(DockPanel dockPanel, Stream stream, Encoding encoding, bool upstream)
             {
                 XmlWriter xmlOut = XmlWriter.Create(stream, new XmlWriterSettings()
@@ -260,7 +289,7 @@ namespace WinDocking.Docking
                     xmlOut.WriteAttributeString("ActivePane", dockPanel.Panes.IndexOf(dockPanel.ActivePane).ToString(CultureInfo.InvariantCulture));
                 }
 
-                // Contents
+                // Contents 内容
                 xmlOut.WriteStartElement("Contents");
                 xmlOut.WriteAttributeString("Count", dockPanel.Contents.Count.ToString(CultureInfo.InvariantCulture));
                 foreach (IDockContent content in dockPanel.Contents)
@@ -275,7 +304,7 @@ namespace WinDocking.Docking
                 }
                 xmlOut.WriteEndElement();
 
-                // Panes
+                // Panes 窗格
                 xmlOut.WriteStartElement("Panes");
                 xmlOut.WriteAttributeString("Count", dockPanel.Panes.Count.ToString(CultureInfo.InvariantCulture));
                 foreach (DockPane pane in dockPanel.Panes)
@@ -298,7 +327,7 @@ namespace WinDocking.Docking
                 }
                 xmlOut.WriteEndElement();
 
-                // DockWindows
+                // DockWindows 停靠窗体
                 xmlOut.WriteStartElement("DockWindows");
                 int dockWindowId = 0;
                 foreach (DockWindow dw in dockPanel.DockWindows)
@@ -326,7 +355,7 @@ namespace WinDocking.Docking
                 }
                 xmlOut.WriteEndElement();
 
-                // FloatWindows
+                // FloatWindows 浮动窗体
                 RectangleConverter rectConverter = new RectangleConverter();
                 xmlOut.WriteStartElement("FloatWindows");
                 xmlOut.WriteAttributeString("Count", dockPanel.FloatWindows.Count.ToString(CultureInfo.InvariantCulture));
@@ -365,6 +394,12 @@ namespace WinDocking.Docking
                     xmlOut.Flush();
             }
 
+            /// <summary>
+            /// 加载xml
+            /// </summary>
+            /// <param name="dockPanel"></param>
+            /// <param name="fileName"></param>
+            /// <param name="deserializeContent"></param>
             public static void LoadFromXml(DockPanel dockPanel, string fileName, DeserializeDockContent deserializeContent)
             {
                 using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
@@ -380,6 +415,12 @@ namespace WinDocking.Docking
                 }
             }
 
+            /// <summary>
+            /// 加载内容
+            /// </summary>
+            /// <param name="xmlIn"></param>
+            /// <returns></returns>
+            /// <exception cref="ArgumentException"></exception>
             private static ContentStruct[] LoadContents(XmlTextReader xmlIn)
             {
                 int countOfContents = Convert.ToInt32(xmlIn.GetAttribute("Count"), CultureInfo.InvariantCulture);
@@ -401,6 +442,12 @@ namespace WinDocking.Docking
                 return contents;
             }
 
+            /// <summary>
+            /// 加载窗格
+            /// </summary>
+            /// <param name="xmlIn"></param>
+            /// <returns></returns>
+            /// <exception cref="ArgumentException"></exception>
             private static PaneStruct[] LoadPanes(XmlTextReader xmlIn)
             {
                 EnumConverter dockStateConverter = new EnumConverter(typeof(DockState));
@@ -437,6 +484,13 @@ namespace WinDocking.Docking
                 return panes;
             }
 
+            /// <summary>
+            /// 加载停靠窗体
+            /// </summary>
+            /// <param name="xmlIn"></param>
+            /// <param name="dockPanel"></param>
+            /// <returns></returns>
+            /// <exception cref="ArgumentException"></exception>
             private static DockWindowStruct[] LoadDockWindows(XmlTextReader xmlIn, DockPanel dockPanel)
             {
                 EnumConverter dockStateConverter = new EnumConverter(typeof(DockState));
@@ -474,6 +528,12 @@ namespace WinDocking.Docking
                 return dockWindows;
             }
 
+            /// <summary>
+            /// 加载浮动窗体
+            /// </summary>
+            /// <param name="xmlIn"></param>
+            /// <returns></returns>
+            /// <exception cref="ArgumentException"></exception>
             private static FloatWindowStruct[] LoadFloatWindows(XmlTextReader xmlIn)
             {
                 EnumConverter dockAlignmentConverter = new EnumConverter(typeof(DockAlignment));
@@ -510,7 +570,15 @@ namespace WinDocking.Docking
 
                 return floatWindows;
             }
-
+            /// <summary>
+            /// 加载xml布局文件
+            /// </summary>
+            /// <param name="dockPanel"></param>
+            /// <param name="stream"></param>
+            /// <param name="deserializeContent"></param>
+            /// <param name="closeStream"></param>
+            /// <exception cref="InvalidOperationException"></exception>
+            /// <exception cref="ArgumentException"></exception>
             public static void LoadFromXml(DockPanel dockPanel, Stream stream, DeserializeDockContent deserializeContent, bool closeStream)
             {
                 if (dockPanel.Contents.Count != 0)
@@ -731,6 +799,11 @@ namespace WinDocking.Docking
                 dockPanel.ResumeLayout(true, true);
             }
 
+            /// <summary>
+            /// 移动至下一个元素
+            /// </summary>
+            /// <param name="xmlIn"></param>
+            /// <returns></returns>
             private static bool MoveToNextElement(XmlTextReader xmlIn)
             {
                 if (!xmlIn.Read())
@@ -761,11 +834,13 @@ namespace WinDocking.Docking
         public void SaveAsXml(string fileName)
         {
             Persistor.SaveAsXml(this, fileName);
+
         }
 
         public void SaveAsXml(string fileName, Encoding encoding)
         {
             Persistor.SaveAsXml(this, fileName, encoding);
+
         }
 
         public void SaveAsXml(Stream stream, Encoding encoding)

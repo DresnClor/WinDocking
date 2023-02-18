@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\bin\Release\VDE.WinDock.dll
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\bin\Release\VDE.WinDock.pdb
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\obj\Release\VWinDocks.Docking.Strings.resources
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\obj\Release\VWinDocks.Themes.Resources.resources
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\obj\Release\VDE.WinDocks.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\obj\Release\VDE.WinDocks.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\obj\Release\VDE.WinDock.dll
+C:\Users\Administrator\Desktop\DcvStudio\DcvStudio\VDE Solution\Libraries\VDE.WinDocks\obj\Release\VDE.WinDock.pdb

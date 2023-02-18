@@ -1,0 +1,30 @@
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.dll
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.pdb
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.xml
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.AssemblyReference.cache
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.Docking.Strings.resources
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.Themes.Resources.resources
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.GenerateResource.cache
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.CoreCompileInputs.cache
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.dll
+E:\Project\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.pdb
+E:\DcvStudio\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.dll
+E:\DcvStudio\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.pdb
+E:\DcvStudio\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.xml
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.AssemblyReference.cache
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.Docking.Strings.resources
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.Themes.Resources.resources
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.GenerateResource.cache
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.CoreCompileInputs.cache
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.dll
+E:\DcvStudio\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.pdb
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.dll
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.pdb
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\bin\x64\Debug\WinDocking.xml
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.AssemblyReference.cache
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.Docking.Strings.resources
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.Themes.Resources.resources
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.GenerateResource.cache
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.csproj.CoreCompileInputs.cache
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.dll
+E:\DcvStudio Project Team\DcvStudio IDE\dev\Libraries\VDE.WinDocks\obj\x64\Debug\WinDocking.pdb

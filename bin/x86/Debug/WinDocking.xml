@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WinDocking</name>
+    </assembly>
+    <members>
+        <member name="T:WinDocking.DockDocumentContent">
+            <summary>
+            停靠文档窗体
+            </summary>
+        </member>
+        <member name="P:WinDocking.DockDocumentContent.DocumentName">
+            <summary>
+            文档名称，用于存放在集合里的键名
+            </summary>
+        </member>
+        <member name="P:WinDocking.DockDocumentContent.FilePath">
+            <summary>
+            文档文件路径
+            </summary>
+        </member>
+        <member name="P:WinDocking.DockDocumentContent.FileIsSave">
+            <summary>
+            是否已保存文件，为true则文件保存，为false则文件没有保存
+            </summary>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.CloseDocumentView(System.Boolean)">
+            <summary>
+            关闭文档视图
+            </summary>
+            <param name="saveFile">是否保存文件</param>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.EditOperation(WinDocking.EditAction,System.Object[])">
+            <summary>
+            编辑操作
+            </summary>
+            <param name="edit">枚举编辑动作</param>
+            <param name="data">数据列表</param>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.HideView">
+            <summary>
+            隐藏视图
+            </summary>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.LoadDocument(System.String)">
+            <summary>
+            加载文档
+            </summary>
+            <param name="path">文档文件路径</param>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.LoadDocument(System.String,System.Object)">
+            <summary>
+            加载文档
+            </summary>
+            <param name="path">文档文件路径</param>
+            <param name="prj">项目实例</param>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.RenameDocument(System.String)">
+            <summary>
+            重命名文档
+            </summary>
+            <param name="newName">新名称</param>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.SaveAsDocument(System.String)">
+            <summary>
+            另存为文档
+            </summary>
+            <param name="path">另存为路径</param>
+        </member>
+        <member name="M:WinDocking.DockDocumentContent.SaveDocument">
+            <summary>
+            保存文档
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripBase.RectangleTopLeft">
+            <summary>
+            The top left rectangle in auto hide strip area.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripBase.RectangleTopRight">
+            <summary>
+            The top right rectangle in auto hide strip area.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripBase.RectangleBottomLeft">
+            <summary>
+            The bottom left rectangle in auto hide strip area.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripBase.RectangleBottomRight">
+            <summary>
+            The bottom right rectangle in auto hide strip area.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.AutoHideStripBase.GetTabStripRectangle(WinDocking.Docking.DockState)">
+            <summary>
+            Gets one of the four auto hide strip rectangles.
+            </summary>
+            <param name="dockState">Dock state.</param>
+            <returns>The desired rectangle.</returns>
+            <remarks>
+            As the corners are represented by <see cref="P:WinDocking.Docking.AutoHideStripBase.RectangleTopLeft"/>, <see cref="P:WinDocking.Docking.AutoHideStripBase.RectangleTopRight"/>, <see cref="P:WinDocking.Docking.AutoHideStripBase.RectangleBottomLeft"/>, and <see cref="P:WinDocking.Docking.AutoHideStripBase.RectangleBottomRight"/>,
+            the four strips can be easily calculated out as the borders.
+            </remarks>
+        </member>
+        <member name="P:WinDocking.Docking.DockContent.Title">
+            <summary>
+            标题 
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockContent.DefaultDockState">
+            <summary>
+            默认停靠状态
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.ShowView(WinDocking.Docking.DockPanel)">
+            <summary>
+            显示默认视图
+            </summary>
+            <param name="panel">停靠面板</param>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.ShowView(WinDocking.Docking.DockState)">
+            <summary>
+            重新显示视图视图
+            </summary>
+            <param name="state">停靠状态</param>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.DockStateIsHide">
+            <summary>
+            判断停靠状态是否隐藏
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.SetThemeStyle">
+            <summary>
+            设置窗体主题风格
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.GetAutoHide">
+            <summary>
+            获取自动隐藏状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.GetNormal">
+            <summary>
+            获取正常停靠状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:WinDocking.Docking.DockContent.TabPageContextMenuStrip">
+            <summary>
+            Context menu strip.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.DockContent.OnSizeChanged(System.EventArgs)">
+            <summary>
+            Overridden to avoid resize issues with nested controls
+            </summary>
+            <remarks>
+            http://blogs.msdn.com/b/alejacma/archive/2008/11/20/controls-won-t-get-resized-once-the-nesting-hierarchy-of-windows-exceeds-a-certain-depth-x64.aspx
+            http://support.microsoft.com/kb/953934
+            </remarks>
+        </member>
+        <member name="P:WinDocking.Docking.DockContentHandler.CloseButtonVisible">
+            <summary>
+            Determines whether the close button is visible on the content
+            </summary>
+        </member>
+        <member name="F:WinDocking.Docking.DockPane._lastParentWindow">
+            <summary>
+            There's a bug in the WinForms layout engine
+            that can result in a deferred layout to not
+            properly clear out the cached layout args after
+            the layout operation is performed.
+            Specifically, this bug is hit when the bounds of
+            the Pane change, initiating a layout on the parent
+            (DockWindow) which is where the bug hits.
+            To work around it, when a pane loses the DockWindow
+            as its parent, that parent DockWindow needs to
+            perform a layout to flush the cached args, if they exist.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneCaptionBase.CanDragAutoHide">
+            <summary>
+            Gets a value indicating whether dock panel can be dragged when in auto hide mode. 
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanel.DockBackColor">
+            <summary>
+            Determines the color with which the client rectangle will be drawn.
+            If this property is used instead of the BackColor it will not have any influence on the borders to the surrounding controls (DockPane).
+            The BackColor property changes the borders of surrounding controls (DockPane).
+            Alternatively both properties may be used (BackColor to draw and define the color of the borders and DockBackColor to define the color of the client rectangle). 
+            For Backgroundimages: Set your prefered Image, then set the DockBackColor and the BackColor to the same Color (Control)
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanel.DockArea">
+            <summary>
+            Dock area.
+            </summary>
+            <remarks>
+            This <see cref="T:System.Drawing.Rectangle"/> is the center rectangle of <see cref="T:WinDocking.Docking.DockPanel"/> control.
+            
+            Excluded spaces are for the following visual elements,
+            * Auto hide strips on four sides.
+            * Necessary paddings defined in themes.
+            
+            Therefore, all dock contents mainly fall into this area (except auto hide window, which might slightly move beyond this area).
+            </remarks>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanel.ShowAutoHideContentOnHover">
+            <summary>
+            Flag to show autohide content on mouse hover. Default value is <code>true</code>.
+            </summary>
+            <remarks>
+            This flag is ignored in VS2012/2013 themes. Such themes assume it is always <code>false</code>.
+            </remarks>
+        </member>
+        <member name="T:WinDocking.Docking.DockPanel.DragHandlerBase">
+            <summary>
+            DragHandlerBase is the base class for drag handlers. The derived class should:
+              1. Define its public method BeginDrag. From within this public BeginDrag method,
+                 DragHandlerBase.BeginDrag should be called to initialize the mouse capture
+                 and message filtering.
+              2. Override the OnDragging and OnEndDrag methods.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.DockPanel.LoadFromXml(System.String,WinDocking.Docking.DeserializeDockContent)">
+            <summary>
+            Loads layout from XML file.
+            </summary>
+            <param name="fileName">The file name.</param>
+            <param name="deserializeContent">Deserialization handler.</param>
+            <exception cref="T:System.Exception">Deserialization might throw exceptions.</exception>
+        </member>
+        <member name="M:WinDocking.Docking.DockPanel.LoadFromXml(System.IO.Stream,WinDocking.Docking.DeserializeDockContent)">
+            <summary>
+            Loads layout from a stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="deserializeContent">Deserialization handler.</param>
+            <exception cref="T:System.Exception">Deserialization might throw exceptions.</exception>
+            <remarks>
+            The stream is closed after deserialization.
+            </remarks>
+        </member>
+        <member name="M:WinDocking.Docking.DockPanel.LoadFromXml(System.IO.Stream,WinDocking.Docking.DeserializeDockContent,System.Boolean)">
+            <summary>
+            Loads layout from a stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="deserializeContent">Deserialization handler.</param>
+            <param name="closeStream">The flag to close the stream after deserialization.</param>
+            <exception cref="T:System.Exception">Deserialization might throw exceptions.</exception>
+        </member>
+        <member name="T:WinDocking.Docking.DeserializeDockContent">
+            <summary>
+            Deserialization handler of layout file/stream.
+            </summary>
+            <param name="persistString">Strings stored in layout file/stream.</param>
+            <returns>Dock content deserialized from layout/stream.</returns>
+            <remarks>
+            The deserialization handler method should handle all possible exceptions.
+            
+            If any exception happens during deserialization and is not handled, the program might crash or experience other issues.
+            </remarks>
+        </member>
+        <member name="T:WinDocking.Docking.DockPanelSkin">
+            <summary>
+            The skin to use when displaying the DockPanel.
+            The skin allows custom gradient color schemes to be used when drawing the
+            DockStrips and Tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanelSkin.AutoHideStripSkin">
+            <summary>
+            The skin used to display the auto hide strips and tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanelSkin.DockPaneStripSkin">
+            <summary>
+            The skin used to display the Document and ToolWindow style DockStrips and Tabs.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.AutoHideStripSkin">
+            <summary>
+            The skin used to display the auto hide strip and tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripSkin.DockStripGradient">
+            <summary>
+            The gradient color skin for the DockStrips.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripSkin.TabGradient">
+            <summary>
+            The gradient color skin for the Tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripSkin.DockStripBackground">
+            <summary>
+            The gradient color skin for the Tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStripSkin.TextFont">
+            <summary>
+            Font used in AutoHideStrip elements.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DockPaneStripSkin">
+            <summary>
+            The skin used to display the document and tool strips and tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripSkin.DocumentGradient">
+            <summary>
+            The skin used to display the Document style DockPane strip and tab.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripSkin.ToolWindowGradient">
+            <summary>
+            The skin used to display the ToolWindow style DockPane strip and tab.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripSkin.TextFont">
+            <summary>
+            Font used in DockPaneStrip elements.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DockPaneStripToolWindowGradient">
+            <summary>
+            The skin used to display the DockPane ToolWindow strip and tab.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripToolWindowGradient.ActiveCaptionGradient">
+            <summary>
+            The skin used to display the active ToolWindow caption.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripToolWindowGradient.InactiveCaptionGradient">
+            <summary>
+            The skin used to display the inactive ToolWindow caption.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DockPaneStripGradient">
+            <summary>
+            The skin used to display the DockPane strip and tab.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripGradient.DockStripGradient">
+            <summary>
+            The gradient color skin for the DockStrip.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripGradient.ActiveTabGradient">
+            <summary>
+            The skin used to display the active DockPane tabs.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneStripGradient.InactiveTabGradient">
+            <summary>
+            The skin used to display the inactive DockPane tabs.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.TabGradient">
+            <summary>
+            The skin used to display the dock pane tab
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.TabGradient.TextColor">
+            <summary>
+            The text color.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DockStripBackground">
+            <summary>
+            The skin used to display the dock pane tab
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockStripBackground.StartColor">
+            <summary>
+            The beginning gradient color.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockStripBackground.EndColor">
+            <summary>
+            The ending gradient color.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DockPanelGradient">
+            <summary>
+            The gradient color skin.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanelGradient.StartColor">
+            <summary>
+            The beginning gradient color.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanelGradient.EndColor">
+            <summary>
+            The ending gradient color.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.DockPanelGradient.LinearGradientMode">
+            <summary>
+            The gradient mode to display the colors.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DockWindow">
+            <summary>
+            Dock window base class.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.DocumentTabStripLocation">
+            <summary>
+            The location to draw the DockPaneStrip for Document style windows.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.ImageServiceHelper.GetImage(System.Drawing.Bitmap,System.Drawing.Color,System.Drawing.Color,System.Nullable{System.Drawing.Color})">
+            <summary>
+            Gets images for tabs and captions.
+            </summary>
+            <param name="mask"></param>
+            <param name="glyph"></param>
+            <param name="background"></param>
+            <param name="border"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WinDocking.Docking.ImageServiceHelper.GetDockIcon(System.Drawing.Bitmap,System.Drawing.Bitmap,System.Drawing.Bitmap,System.Drawing.Bitmap,System.Drawing.Bitmap,System.Drawing.Color,WinDocking.Docking.IPaintingService,System.Drawing.Bitmap,System.Drawing.Bitmap,System.Nullable{System.Drawing.Color})">
+            <summary>
+            Gets images for docking indicators.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WinDocking.Docking.NestedPaneCollection.SwitchPaneWithFirstChild(WinDocking.Docking.DockPane)">
+            <summary>
+            Switches a pane with its first child in the pane hierarchy. (The actual hiding happens elsewhere.)
+            </summary>
+            <param name="pane">Pane to switch</param>
+        </member>
+        <member name="T:WinDocking.Docking.Strings">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Category_Docking">
+            <summary>
+              查找类似 停靠 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Category_DockingNotification">
+            <summary>
+              查找类似 停靠通知 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Category_Performance">
+            <summary>
+              查找类似 演示 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Category_PropertyChanged">
+            <summary>
+              查找类似 属性改变 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockAreaEditor_FloatCheckBoxText">
+            <summary>
+              查找类似 (浮动) 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_AllowEndUserDocking_Description">
+            <summary>
+              查找类似 确定是否允许最终用户拖放停靠 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_AutoHidePortion_Description">
+            <summary>
+              查找类似 在自动隐藏模式下显示内容的大小。值&lt;1以指定部分大小；值&gt;=1以指定像素大小 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_CloseButton_Description">
+            <summary>
+              查找类似 启用/禁用视图的关闭按钮 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_CloseButtonVisible_Description">
+            <summary>
+              查找类似 显示或隐藏视图的“关闭”按钮。此属性不适用于系统MDI文档样式 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_Constructor_InvalidForm">
+            <summary>
+              查找类似 表单的类型必须为IDockContent 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_DockAreas_Description">
+            <summary>
+              查找类似 获取或设置一个值，该值指示允许在DockPanel的哪个区域显示内容 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_DockStateChanged_Description">
+            <summary>
+              查找类似 在DockState属性的值更改时发生 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_HideOnClose_Description">
+            <summary>
+              查找类似 按下关闭按钮时，如果为true则视图隐藏，为false则视图关闭 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_ShowHint_Description">
+            <summary>
+              查找类似 首次显示时所需的停靠状态 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_TabPageContextMenu_Description">
+            <summary>
+              查找类似 显示停靠面板选项卡条的关联菜单 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_TabText_Description">
+            <summary>
+              查找类似 停靠窗格中显示的选项卡文本。如果未设置，将使用Text属性 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContent_ToolTipText_Description">
+            <summary>
+              查找类似 鼠标悬停在选项卡上时显示的文本 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_AutoHidePortion_OutOfRange">
+            <summary>
+              查找类似 提供的值超出范围 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_DockAreas_InvalidValue">
+            <summary>
+              查找类似 无效值：DockAreas的值与当前DockState冲突 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_DockPane_InvalidValue">
+            <summary>
+              查找类似 The pane is invalid. Check the IsFloat and DockPanel properties of this dock pane. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_FloatPane_InvalidValue">
+            <summary>
+              查找类似 The pane is invalid. Check the IsFloat and DockPanel properties of this dock pane. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_IsFloat_InvalidValue">
+            <summary>
+              查找类似 Invalid value, conflicts with DockableAreas  property. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_SetDockState_InvalidState">
+            <summary>
+              查找类似 The dock state is invalid. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_SetDockState_NullPanel">
+            <summary>
+              查找类似 The dock panel is null. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_Show_InvalidBeforeContent">
+            <summary>
+              查找类似 Invalid beforeContent, it must be contained by the pane. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_Show_InvalidDockState">
+            <summary>
+              查找类似 Invalid DockState: Content can not be showed as &quot;Unknown&quot; or &quot;Hidden&quot;. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_Show_InvalidPrevPane">
+            <summary>
+              查找类似 The previous pane is invalid. It can not be null, and its docking state must not be auto-hide. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_Show_NullDockPanel">
+            <summary>
+              查找类似 DockPanel can not be null. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_Show_NullPane">
+            <summary>
+              查找类似 The Pane can not be null. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockContentHandler_ShowHint_InvalidValue">
+            <summary>
+              查找类似 Invalid value, check DockableAreas property. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockHandler_TabPageContextMenuStrip_Description">
+            <summary>
+              查找类似 Context menu displayed for the dock pane tab strip. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_ActiveContent_InvalidValue">
+            <summary>
+              查找类似 Invalid Content: ActiveContent must be one of the visible contents, or null if there is no visible content. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_Constructor_NullContent">
+            <summary>
+              查找类似 Invalid argument: Content can not be &quot;null&quot;. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_Constructor_NullDockPanel">
+            <summary>
+              查找类似 Invalid argument: The content&apos;s DockPanel can not be &quot;null&quot;. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_DockTo_InvalidContainer">
+            <summary>
+              查找类似 The specified container conflicts with the IsFloat property. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_DockTo_NoPrevPane">
+            <summary>
+              查找类似 The previous pane does not exist in the nested docking pane collection. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_DockTo_NullContainer">
+            <summary>
+              查找类似 The container can not be null. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_DockTo_NullPrevPane">
+            <summary>
+              查找类似 The previous pane can not be null when the nested docking pane collection is not empty. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_DockTo_SelfPrevPane">
+            <summary>
+              查找类似 The previous pane can not be itself. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_SetContentIndex_InvalidContent">
+            <summary>
+              查找类似 Invalid Content: Content not within the collection. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_SetContentIndex_InvalidIndex">
+            <summary>
+              查找类似 Invalid Index: The index is out of range. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPane_SetDockState_InvalidState">
+            <summary>
+              查找类似 The state for the dock pane is invalid. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPaneCaption_ToolTipAutoHide">
+            <summary>
+              查找类似 自动隐藏 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPaneCaption_ToolTipClose">
+            <summary>
+              查找类似 关闭 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPaneCaption_ToolTipOptions">
+            <summary>
+              查找类似 视图菜单 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ActiveAutoHideContent_InvalidValue">
+            <summary>
+              查找类似 Invalid Content: The content must be auto-hide state and associates with this DockPanel. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ActiveAutoHideContentChanged_Description">
+            <summary>
+              查找类似 Occurs when the value of the AutoHideWindow&apos;s ActiveContent changed. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ActiveContentChanged_Description">
+            <summary>
+              查找类似 Occurs when the value of ActiveContentProperty changed. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ActiveDocumentChanged_Description">
+            <summary>
+              查找类似 Occurs when the value of ActiveDocument property changed. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ActivePaneChanged_Description">
+            <summary>
+              查找类似 Occurs when the value of ActivePane property changed. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_AllowEndUserDocking_Description">
+            <summary>
+              查找类似 Determines if the drag and drop docking is allowed. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_AllowEndUserNestedDocking_Description">
+            <summary>
+              查找类似 Determines if the drag and drop nested docking is allowed. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ContentAdded_Description">
+            <summary>
+              查找类似 Occurs when a content added to the DockPanel. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ContentRemoved_Description">
+            <summary>
+              查找类似 Occurs when a content removed from the DockPanel. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DefaultFloatWindowSize_Description">
+            <summary>
+              查找类似 The default size of float window. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_Description">
+            <summary>
+              查找类似 Provides Visual Studio .Net style docking. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DockBottomPortion_Description">
+            <summary>
+              查找类似 Size of the bottom docking window. Value &lt; 1 to specify the size in portion; value &gt; 1 to specify the size in pixels. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DockLeftPortion_Description">
+            <summary>
+              查找类似 Size of the left docking window. Value &lt; 1 to specify the size in portion; value &gt; 1 to specify the size in pixels. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DockPanelSkin_Description">
+            <summary>
+              查找类似 The visual skin to use when displaying the docked windows. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DockRightPortion_Description">
+            <summary>
+              查找类似 Size of the right docking window. Value &lt; 1 to specify the size in portion; value &gt; 1 to specify the size in pixels. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DockTopPortion_Description">
+            <summary>
+              查找类似 Size of the top docking window. Value &lt; 1 to specify the size in portion; value &gt; 1 to specify the size in pixels. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DocumentDragged_Description">
+            <summary>
+              查找类似 Occurs when a document or pane is dragged within the dock panel. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DocumentStyle_Description">
+            <summary>
+              查找类似 The style of the document window. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_DocumentTabStripLocation_Description">
+            <summary>
+              查找类似 Determines where the tab strip for Document style content is drawn. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_LoadFromXml_AlreadyInitialized">
+            <summary>
+              查找类似 The DockPanel has already been initialized. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_LoadFromXml_InvalidFormatVersion">
+            <summary>
+              查找类似 The configuration file&apos;s version is invalid. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_LoadFromXml_InvalidXmlFormat">
+            <summary>
+              查找类似 The XML file format is invalid. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ParentForm_Invalid">
+            <summary>
+              查找类似 Invalid parent form. When using DockingMdi or SystemMdi document style, the DockPanel control must be the child control of the main MDI container form. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_Persistor_XmlFileComment1">
+            <summary>
+              查找类似 DockPanel configuration file. Author: Weifen Luo, all rights reserved. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_Persistor_XmlFileComment2">
+            <summary>
+              查找类似 !!! AUTOMATICALLY GENERATED FILE. DO NOT MODIFY !!! 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_RightToLeftLayout_Description">
+            <summary>
+              查找类似 Indicates whether the control layout is right-to-left when the RightToLeft property is set to Yes. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_SetPaneIndex_InvalidIndex">
+            <summary>
+              查找类似 Invalid Index: The index is out of range. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_SetPaneIndex_InvalidPane">
+            <summary>
+              查找类似 Invalid Pane: DockPane not within the collection. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ShowAutoHideContentOnHover_Description">
+            <summary>
+              查找类似 Shows the hidden autohide content when hovering over the tab.  When disabled, the tab must be clicked to show the content. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_ShowDocumentIcon_Description">
+            <summary>
+              查找类似 Determines if the document icon will be displayed in the tab strip. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPanel_SupportDeeplyNestedContent_Description">
+            <summary>
+              查找类似 Support deeply nested controls.  Disabling this setting may improve resize performance but may cause heavily nested content not to resize. 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.DockPaneStrip_ToolTipWindowList">
+            <summary>
+              查找类似 窗体列表 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.FloatWindow_Constructor_NullDockPanel">
+            <summary>
+              查找类似 无效参数: DockPanel 不能为 null 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.IDockDragSource_DockTo_InvalidPanel">
+            <summary>
+              查找类似 无效的DockPanel 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Theme_DockContentNotClosed">
+            <summary>
+              查找类似 在应用主题之前，必须关闭所有停靠视图 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Theme_FloatWindowNotClosed">
+            <summary>
+              查找类似 在应用主题之前，必须关闭所有浮动窗口 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Theme_MissingFactory">
+            <summary>
+              查找类似 在应用主题之前，必须配置所有工厂 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Theme_NoTheme">
+            <summary>
+              查找类似 主题必须设置为有效的主题 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.Strings.Theme_PaneNotClosed">
+            <summary>
+              查找类似 在应用主题之前，必须关闭所有窗口 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.VToolStripExtender.Theme">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.VToolStripExtender.SetStripStyle(System.Windows.Forms.ToolStrip)">
+            <summary>
+            设置工具条、菜单、状态条主题
+            </summary>
+            <param name="strip"></param>
+        </member>
+        <member name="F:WinDocking.Docking.VToolStripExtender.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.VToolStripExtender.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinDocking.Docking.VToolStripExtender.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.VBlueTheme">
+            <summary>
+            Visual Studio 2015 Light theme.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.VDarkTheme">
+            <summary>
+            Visual Studio 2015 Light theme.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.VLightTheme">
+            <summary>
+            Visual Studio 2015 Light theme.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStrip.TabVS2012.TabX">
+            <summary>
+            X for this <see href="TabVS2012"/> inside the logical strip rectangle.
+            </summary>
+        </member>
+        <member name="P:WinDocking.Docking.AutoHideStrip.TabVS2012.TabWidth">
+            <summary>
+            Width of this <see href="TabVS2012"/>.
+            </summary>
+        </member>
+        <member name="T:WinDocking.Docking.VDockWindow">
+            <summary>
+            Dock window of Visual Studio 2012 Light theme.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Docking.VDockWindow.#ctor(WinDocking.Docking.DockPanel,WinDocking.Docking.DockState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WinDocking.Docking.DockWindow"/> class.
+            </summary>
+            <param name="dockPanel">The dock panel.</param>
+            <param name="dockState">State of the dock.</param>
+        </member>
+        <member name="P:WinDocking.Docking.DockPaneCaption.CloseButtonVisible">
+            <summary>
+            Determines whether the close button is visible on the content
+            </summary>
+        </member>
+        <member name="T:WinDocking.DockViewContent">
+            <summary>
+            停靠视图窗体
+            </summary>
+        </member>
+        <member name="P:WinDocking.DockViewContent.ViewName">
+            <summary>
+            停靠视图区别名称
+            </summary>
+        </member>
+        <member name="M:WinDocking.DockViewContent.CreatePopupMenu(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            创建停靠视图菜单
+            </summary>
+            <param name="flat">浮动项文本</param>
+            <param name="dock">停靠项文本</param>
+            <param name="hide">自动隐藏项文本</param>
+            <param name="doc">文档停靠项文本</param>
+            <param name="close">关闭项文本</param>
+        </member>
+        <member name="T:WinDocking.EditAction">
+            <summary>
+            文档视图编辑动作枚举
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Null">
+            <summary>
+            无任何操作
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Undo">
+            <summary>
+            撤销
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Redo">
+            <summary>
+            重做
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Cut">
+            <summary>
+            剪切
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Copy">
+            <summary>
+            复制
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Paste">
+            <summary>
+            粘贴
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.SelectAll">
+            <summary>
+            全选
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.InsertText">
+            <summary>
+            将文件作为文本插入
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.Goto">
+            <summary>
+            转到
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.GotoLine">
+            <summary>
+            转到行
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.GotoEndOfLine">
+            <summary>
+            转到行尾
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.GotoBeginOfLine">
+            <summary>
+            转到行首
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.GotoSymbol">
+            <summary>
+            转到符号
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.SelectRowSpaceWithTabs">
+            <summary>
+            将选定行中的空格替换为制表符
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.SelectRowTabsWithSpace">
+            <summary>
+            将选定行中的制表符替换为空格
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.MoveUpSelectRow">
+            <summary>
+            将选定行上移
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.MoveDownSelectRow">
+            <summary>
+            将选定行下移
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.ConvertUpper">
+            <summary>
+            转为大写
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.ConvertLower">
+            <summary>
+            转为小写
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.ViewTextBlank">
+            <summary>
+            查看空白
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.AutoWrap">
+            <summary>
+            自动换行
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.CommentSelect">
+            <summary>
+            注释选定内容
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.UncommentSelect">
+            <summary>
+            取消注释选定内容
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.IncreaseIndent">
+            <summary>
+            增加行缩进
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.DecreaseIndent">
+            <summary>
+            减少行缩进
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.SetLineSequence">
+            <summary>
+            设置行尾序列
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.SetIndent">
+            <summary>
+            设置缩进
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.ToggleBookmarks">
+            <summary>
+            切换书签
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.PrevBookmark">
+            <summary>
+            上一个书签
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.NextBookmark">
+            <summary>
+            下一个书签
+            </summary>
+        </member>
+        <member name="F:WinDocking.EditAction.ClearBookmark">
+            <summary>
+            清除书签
+            </summary>
+        </member>
+        <member name="T:WinDocking.Themes.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.blue_theme">
+            <summary>
+              查找 System.Byte[] 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.dark_theme">
+            <summary>
+              查找 System.Byte[] 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.Dockindicator_PaneDiamond_Hotspot">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.DockIndicator_PaneDiamond_HotspotIndex">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.light_theme">
+            <summary>
+              查找 System.Byte[] 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskArrowBottom">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskArrowLeft">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskArrowRight">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskArrowTop">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskCoreBottom">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskCoreCenter">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskCoreLeft">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskCoreRight">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskCoreTop">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskDock">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskDockFive">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskTabClose">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskTabList">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskTabOverflow">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskToolWindowAutoHide">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskToolWindowClose">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskToolWindowDock">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskToolWindowOption">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskWindowBottom">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskWindowCenter">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskWindowLeft">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskWindowRight">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:WinDocking.Themes.Resources.MaskWindowTop">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:WinDocking.Themes.VThemeBase">
+            <summary>
+            Visual Studio 2015 theme base.
+            </summary>
+        </member>
+        <member name="M:WinDocking.Themes.DockPaneStrip.CalculateTabs_Document">
+            <summary>
+            Calculate which tabs are displayed and in what order.
+            </summary>
+        </member>
+    </members>
+</doc>

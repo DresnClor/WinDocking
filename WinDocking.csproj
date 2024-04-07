@@ -293,6 +293,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Themes\CustomTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Themes\VBlueTheme.cs">
       <SubType>Component</SubType>
     </Compile>
